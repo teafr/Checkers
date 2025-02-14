@@ -6,11 +6,15 @@ namespace CheckersGame.Models
     {
         public SquareStatus[,] Board { get; set; }
 
-        public CheckersGame(int rows, int columns)
+        public Settings Settings { get; set; }
+
+        public CheckersGame(int rows, int columns, Settings settings)
         {
-            MakeBoardEmpty();
+            Board = new SquareStatus[rows, columns];
+            Settings = settings;
         }
 
+        // Will be in controller
         public void MakeBoardEmpty()
         {
             int rows = Board.GetLength(0);
@@ -23,10 +27,6 @@ namespace CheckersGame.Models
                     Board[row, column] = SquareStatus.Empty;
                 }
             }
-        }
-        public void FindAllOptions()
-        {
-
         }
     }
 }
