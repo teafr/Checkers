@@ -12,7 +12,7 @@ namespace Builder
         public static string GetInfo(this MailMessage mailMessage)
         {
             return $"From: {mailMessage.From}. To: {mailMessage.To}. CC: {mailMessage?.CC}. " +
-                   $"Subject: {mailMessage?.Subject ?? "no subject"}. Body: {mailMessage?.Body ?? "there are no text"}.";
+                   $"Subject: {mailMessage?.Subject ?? "no subject"}. Body: {mailMessage?.Body}.";
         }
     }
 }
